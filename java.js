@@ -1,0 +1,1 @@
+console.log("I Am The Answer To All Living Things That Cry Out For Peace. -Goku!")
