@@ -5,27 +5,34 @@ fecthData();
 async function fecthData(){
 
     try{
-
+       
+       
+       //CONNECTS TO THE WEBSITE AND STORES THE RESULTS IN RESPONSE
+        const response = await fetch("https://dragonball-api.com/api/characters?limit=58");
+       
+       
+       //VARIABLES DECLARED HERE
         const bttn = document.getElementById("bttn");
         const dbzCharacter = document.getElementById("dbzCharacter");
         const dragonName = document.getElementById("dragonName");
-        const response = await fetch("https://dragonball-api.com/api/characters?limit=58");
+       
+
 
         if(!response.ok){
             throw new Error("can't do that!");
         }
 
-
+      //CONVERTS THE RESULTS FROM STRING FORM TO OBJECT OR DATA FORM
        const data = await response.json();
        console.log(data.items);
    
     }
     catch(error){
-        console.log(error);
+        //IF THERES AN ERROR, RUN THIS CODE
+        console.log("SOMETHING IS BUGGIN` DA CODE:",error);
     }
 
-    bttn.addEventListener.fecthData()
     
-
 }
 
+document.getElementById("bttn").addEventListener("click",fecthData);
