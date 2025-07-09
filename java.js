@@ -1,5 +1,12 @@
 console.log("I Am The Answer To All Living Things That Cry Out For Peace. -Goku!")
 
+
+      //VARIABLES DECLARED HERE
+        const bttn = document.getElementById("bttn");
+        const dbzCharacter = document.getElementById("dbzCharacter");
+        const dragonName = document.getElementById("dragonName");
+
+
 fecthData();
 
 async function fecthData(){
@@ -10,13 +17,6 @@ async function fecthData(){
        //CONNECTS TO THE WEBSITE AND STORES THE RESULTS IN RESPONSE
         const response = await fetch("https://dragonball-api.com/api/characters?limit=58");
        
-       
-       //VARIABLES DECLARED HERE
-        const bttn = document.getElementById("bttn");
-        const dbzCharacter = document.getElementById("dbzCharacter");
-        const dragonName = document.getElementById("dragonName");
-       
-
 
         if(!response.ok){
             throw new Error("can't do that!");
