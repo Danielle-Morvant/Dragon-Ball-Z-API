@@ -43,18 +43,22 @@ async function fecthData(){
 //function that randomnly picks one character with image when name is typed and button is clicked
 async function randomCharacter(){
 
-    try 
+    try{ 
 
     const response = await fetcch("https://dragonball-api.com/api");
 
      if(!response.ok){
-            throw new Error("can't do that!");
+            throw new Error("NO CHARACTER CALLED!");
         }
 
+        const data = await response.json();
+        console.log();
+    }
 
-    
-
-    
+    catch(error){
+        //IF THERES AN ERROR, RUN THIS CODE
+        console.log("SOMETHING IS WRONG WITH DA CODE:",error);
+    }
 
     
 }
