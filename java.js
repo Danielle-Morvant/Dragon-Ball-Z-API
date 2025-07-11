@@ -98,5 +98,5 @@ async function page1(items) {
     //IF THERES AN ERROR, RUN THIS CODE
     console.log("SOMETHING IS BUGGIN` DA CODE: page1", error);
   } finally 
-  document.response.
+pageOne.innerHTML.render(pageOne);
 }
