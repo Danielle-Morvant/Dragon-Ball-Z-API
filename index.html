@@ -13,21 +13,25 @@
     
     <main>
         <img src="pictures/title-pic.png" alt="dragon ball z title-pic" 
-        class="w-full animate-bounce animat">
+        class="w-full animate-bounce">
     <header></header>
     </main>
 
     <div>
-        <input type="text" id="dragonName" placeholder="enter character name" class="p-2.5 ms-5 rounded-2xl" ></input>
+        <input type="text" id="dragonName" placeholder="enter character name" class="p-1 ms-5 rounded-2xl" ></input>
         
-        <button id="bttn" class="rounded-3xl border-blue-950 border-2 hover:bg-blue-400">search</button>
+        <button id="bttn" class="p-1 rounded-2xl border-blue-950 border-2 hover:bg-blue-400">search</button>
         
         <img src="" alt="Dragon Ball Z Character" id="dbzCharacter" style="display: none">
     </div>
 
     <br><br>
 
-    <div>
+    <div class="container row-span-4">
+        <button link = "https://dragonball-api.com/api/characters?limit=5">first</button>
+        <button link = "https://dragonball-api.com/api/characters?page=1&limit=5">previous</button>
+        <button link = "https://dragonball-api.com/api/characters?page=3&limit=5">next</button>
+        <button link = "https://dragonball-api.com/api/characters?page=12&limit=5">last</button>
 
     </div>
 
