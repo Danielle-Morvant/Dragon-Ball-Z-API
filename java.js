@@ -11,6 +11,11 @@ const dbzCharacter = document.getElementById("dbzCharacter");
 //TEXT INPUT ID =  dragonName
 const dragonName = document.getElementById("dragonName");
 
+//pagination ids
+const pageOne = document.getElementById('pageOne');
+
+
+
 bttn.addEventListener("click", () => showCharacters());
 fetchData("");
 
@@ -22,17 +27,17 @@ async function fetchData(name) {
     );
 
     if (!response.ok) {
-      throw new Error("can't do that!");
+      throw new Error("can't do fetchData!");
     }
 
     //CONVERTS THE RESULTS FROM STRING FORM TO OBJECT OR DATA
     const data = await response.json();
     console.log(data);
     return data;
-    render(data)
+    render(data);
   } catch (error) {
     //IF THERES AN ERROR, RUN THIS CODE
-    console.log("SOMETHING IS BUGGIN` DA CODE:", error);
+    console.log("SOMETHING IS BUGGIN` DA CODE: fetchData", error);
   }
 }
 
@@ -67,7 +72,31 @@ function renderRandomDragon(characterData) {
   console.log(characterData);
 
   //WRITE LOGIC TO RENDER DATA FROM CHARACTER
-for (items : data.items);
 }
 
+//BELOW IS JUST AN ATTEMPT TO ATTACH EACH PAGE TO PAGE NUMBER IN HTML AND HOPEFULLY HAVE IT RENDERED(TIME PERMITTING)
 
+async function page1(items) {
+  try {
+    const response = await fetch(
+      `https://dragonball-api.com/api/characters?limit=10`
+    );
+
+    if (!response.ok) {
+      throw new Error("can't do page1!");
+    }
+
+    const data = await response.json();
+
+    pageOne.innerHTML = data
+    .map((items) => {
+      return
+    }
+  )
+
+  } catch (error) {
+    //IF THERES AN ERROR, RUN THIS CODE
+    console.log("SOMETHING IS BUGGIN` DA CODE: page1", error);
+  } finally 
+  document.response.
+}
