@@ -6,6 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragon Ball Z App</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+.pagination {
+  display: inline-block
+}
+
+.pagination a {
+  color: rgb(22, 22, 107);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: red;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+</style>
 
 </head>
 
@@ -14,20 +35,34 @@
     <main>
         <img src="pictures/title-pic.png" alt="dragon ball z title-pic" 
         class="w-full animate-bounce">
-    <header></header>
+    <header>
+        <p>
+            <h3>Do you love Dragon Ball Z and want to get to know the characters more?...Take a look around and maybe we can get to know them bettr together.</h3>
+
+        </p>
+    </header>
     </main>
 
     <div>
         <input type="text" id="dragonName" placeholder="enter character name" class="p-1 ms-5 rounded-2xl" ></input>
         
-        <button id="bttn" class="p-1 rounded-2xl border-blue-950 border-2 hover:bg-blue-400">search</button>
+        <button id="bttn" class="p-1 rounded-3xl border-blue-950 border-4 hover:bg-blue-400 text-red-900 font-bold sm:w-full">search</button>
         
         <img src="" alt="Dragon Ball Z Character" id="dbzCharacter" style="display: none">
     </div>
 
     <br><br>
 
-    <div>
+    <div class="pagination">
+
+  <a href="#">&laquo;</a>
+  <a href="https://dragonball-api.com/api/characters?limit=10">1</a>
+  <a href="https://dragonball-api.com/api/characters?page=2&limit=10">2</a>
+  <a href="https://dragonball-api.com/api/characters?page=3&limit=10">3</a>
+  <a href="https://dragonball-api.com/api/characters?page=4&limit=10">4</a>
+  <a href="https://dragonball-api.com/api/characters?page=5&limit=10">5</a>
+  <a href="https://dragonball-api.com/api/characters?page=6&limit=10">6</a>
+  <a href="#">&raquo;</a>
 
     </div>
 
