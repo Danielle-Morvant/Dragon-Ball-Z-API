@@ -12,7 +12,7 @@ const dbzCharacter = document.getElementById("dbzCharacter");
 const dragonName = document.getElementById("dragonName");
 
 bttn.addEventListener("click", () => showCharacters());
-fetchData("Goku");
+fetchData("");
 
 async function fetchData(name) {
   try {
@@ -29,6 +29,7 @@ async function fetchData(name) {
     const data = await response.json();
     console.log(data);
     return data;
+    render(data)
   } catch (error) {
     //IF THERES AN ERROR, RUN THIS CODE
     console.log("SOMETHING IS BUGGIN` DA CODE:", error);
@@ -39,7 +40,7 @@ async function fetchData(name) {
 async function randomCharacter() {
   try {
     const response = await fetch(
-      "https://dragonball-api.com/api/characters?limit10"
+      "https://dragonball-api.com/api/characters?limit1"
     );
 
     if (!response.ok) {
@@ -55,7 +56,6 @@ async function randomCharacter() {
 }
 //ACTIVATE FUNCTIONS
 
-
 async function showCharacters() {
   const data = await fetchData(dragonName.value);
 
@@ -67,4 +67,7 @@ function renderRandomDragon(characterData) {
   console.log(characterData);
 
   //WRITE LOGIC TO RENDER DATA FROM CHARACTER
+for (items : data.items);
 }
+
+
