@@ -10,14 +10,15 @@ const bttn = document.getElementById("bttn");
 const dbzCharacter = document.getElementById("dbzCharacter");
 //TEXT INPUT ID =  dragonName
 const dragonName = document.getElementById("dragonName");
+//PARAGRAPH ID
+const characterInfo = document.getElementById("characterInfo");
 
 //pagination ids
 const pageOne = document.getElementById('pageOne');
 
 
 
-bttn.addEventListener("click", () => showCharacters());
-fetchData("");
+
 
 async function fetchData(name) {
   try {
@@ -33,13 +34,21 @@ async function fetchData(name) {
     //CONVERTS THE RESULTS FROM STRING FORM TO OBJECT OR DATA
     const data = await response.json();
     console.log(data);
-    return data;
-    render(data);
+   // document.addEventListener("click",data);
+   renderData(data[0]);
+  
   } catch (error) {
     //IF THERES AN ERROR, RUN THIS CODE
     console.log("SOMETHING IS BUGGIN` DA CODE: fetchData", error);
   }
 }
+
+function renderData (data){
+  characterInfo.innerHTML = data[0].image;
+}
+
+bttn.addEventListener("click", () => showCharacters());
+fetchData("");
 
 //function that randomnly picks one character with image when name is typed and button is clicked
 async function randomCharacter() {
@@ -69,9 +78,10 @@ async function showCharacters() {
 }
 
 function renderRandomDragon(characterData) {
-  console.log(characterData);
+
 
   //WRITE LOGIC TO RENDER DATA FROM CHARACTER
+ // document.addEventListener("click",data);
 }
 
 //BELOW IS JUST AN ATTEMPT TO ATTACH EACH PAGE TO PAGE NUMBER IN HTML AND HOPEFULLY HAVE IT RENDERED(TIME PERMITTING)
@@ -90,12 +100,12 @@ async function page1(items) {
 
     pageOne.innerHTML = data
     .map((items) => {
-      return
+      return "" + items;
     }
   )
 
   } catch (error) {
     //IF THERES AN ERROR, RUN THIS CODE
     console.log("SOMETHING IS BUGGIN` DA CODE: page1", error);
-  } finally 
+  } 
 }
