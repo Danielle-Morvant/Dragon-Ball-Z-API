@@ -34,8 +34,6 @@ async function fetchData(name) {
     //CONVERTS THE RESULTS FROM STRING FORM TO OBJECT OR DATA
     const data = await response.json();
     console.log(data);
-    document.textContent(data);
-   // document.addEventListener("click",data);
    
   return data;
   } catch (error) {
