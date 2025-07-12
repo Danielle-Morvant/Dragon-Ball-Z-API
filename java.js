@@ -10,7 +10,7 @@ const bttn = document.getElementById("bttn");
 const dbzCharacter = document.getElementById("dbzCharacter");
 //TEXT INPUT ID =  dragonName
 const dragonName = document.getElementById("dragonName");
-//PARAGRAPH ID
+//EMPTY DIV ID
 const characterInfo = document.getElementById("characterInfo");
 
 //pagination ids
@@ -35,8 +35,8 @@ async function fetchData(name) {
     const data = await response.json();
     console.log(data);
    // document.addEventListener("click",data);
-   renderData(data[0]);
-  
+   
+  return data;
   } catch (error) {
     //IF THERES AN ERROR, RUN THIS CODE
     console.log("SOMETHING IS BUGGIN` DA CODE: fetchData", error);
@@ -44,7 +44,8 @@ async function fetchData(name) {
 }
 
 function renderData (data){
-  characterInfo.innerHTML = data[0].image;
+  characterInfo.innerHTML = data;
+  console.log(data)
 }
 
 bttn.addEventListener("click", () => showCharacters());
