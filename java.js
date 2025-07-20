@@ -35,6 +35,15 @@ async function fetchData(name) {
     const data = await response.json();
     console.log(data);
    
+    const characterCard = document.getElementById("characterCard");
+
+    characterCard.innerHTML = `<img src="${data[0].image}" class="card-img-top" alt="...">
+       <div class="card-body">
+        <p class="card-text">Name:${data[0].name}<br></p>Affiliation:"${data[0].affiliation}"<br>Race:"${data[0].race}"<br>Description:"${data[0].description}"
+       </div>`
+
+
+
   return data;
   } catch (error) {
     //IF THERES AN ERROR, RUN THIS CODE
